@@ -13,16 +13,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SeleniumDockerTests {
-    @BeforeClass
-    public void startDockerGrid() throws IOException, InterruptedException {
-        Runtime.getRuntime().exec("cmd /c start .\\src\\batchFiles\\start_dockerGrid.bat");
-        Thread.sleep(15000);
-    }
-    @AfterClass
-    public void stopDockerGrid() throws InterruptedException, IOException {
-        Runtime.getRuntime().exec("cmd /c start .\\src\\batchFiles\\stop_dockerGrid.bat");
-        Thread.sleep(5000);
-    }
+//    @BeforeClass
+//    public void startDockerGrid() throws IOException, InterruptedException {
+//        Runtime.getRuntime().exec("cmd /c start .\\src\\batchFiles\\start_dockerGrid.bat");
+//        Thread.sleep(15000);
+//    }
+//    @AfterClass
+//    public void stopDockerGrid() throws InterruptedException, IOException {
+//        Runtime.getRuntime().exec("cmd /c start .\\src\\batchFiles\\stop_dockerGrid.bat");
+//        Thread.sleep(5000);
+//    }
     final private String hubUrl = "http://localhost:4444/wd/hub";
     @Test
     public void test1() throws MalformedURLException {

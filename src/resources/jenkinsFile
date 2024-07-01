@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    environment {
+        CHROME_INSTANCES = 5
+        FIREFOX_INSTANCES = 5
+    }
+
+    stages {
+        stage('Clone repository') {
+            steps {
+                git 'https://github.com/umohanbabu107/DockerGridPorject'
+            }
+        }
+        stage('Start Selenium Grid') {
+            steps {
+                script {
+                    sh 'CHROME_INSTANCES=${CHROME_INSTANCES} FIREFOX_INSTANCES=${FIREFOX_INSTANCES} docker-compose up -d'
+                }
+            }
+        }
+        stage('Build Docker image') {
+            steps {
+                script {
+                    docker.build('test-image', '.')
+                }
+            }
+        }
+        stage('Run tests') {
+            steps {
+                script {
+                    def testImage = docker.image('test-image')
+                    testImage.inside('--link selenium-hub:hub') {
+                        sh 'mvn test'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+            script {
+                sh 'docker-compose down'
+            }
+        }
+    }
+}
