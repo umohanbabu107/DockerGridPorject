@@ -7,7 +7,7 @@ public class Configurations {
     public String getPropertyByKey(String key){
         Properties properties = new Properties();
         try {
-            FileInputStream fis = new FileInputStream(".//src/resources/technicalConfigurations.properties");
+            FileInputStream fis = new FileInputStream(".resources/technicalConfigurations.properties");
             properties.load(fis);
         }
         catch (Exception exception){

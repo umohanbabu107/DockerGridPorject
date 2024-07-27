@@ -2,13 +2,13 @@ package tests;
 
 import base.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
+public class SeleniumDockerTests1 extends BaseTest {
 
-
-public class SeleniumDockerTests extends BaseTest {
     @Test
-    public void test8() {
+    public void test3() {
         WebDriver driver = initializeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
@@ -16,7 +16,7 @@ public class SeleniumDockerTests extends BaseTest {
         driver.quit();
     }
     @Test
-    public void test9() {
+    public void test4() {
         WebDriver driver = initializeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.flipkart.com/");
@@ -24,7 +24,7 @@ public class SeleniumDockerTests extends BaseTest {
         driver.quit();
     }
     @Test
-    public void test10(){
+    public void test5(){
         WebDriver driver = initializeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com/");
@@ -32,7 +32,7 @@ public class SeleniumDockerTests extends BaseTest {
         driver.quit();
     }
     @Test
-    public void test11() {
+    public void test6(){
         WebDriver driver = initializeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.myntra.com/");
@@ -40,7 +40,7 @@ public class SeleniumDockerTests extends BaseTest {
         driver.quit();
     }
     @Test
-    public void test12() {
+    public void test7(){
         WebDriver driver = initializeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.ajio.com/");
