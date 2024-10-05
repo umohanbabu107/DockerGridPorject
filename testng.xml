@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Parallel Test Suite" parallel="methods" thread-count="8">
-    <test name="Test1">
-        <packages>
-            <package name="tests" />
-        </packages>
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utilities.Listeners" />
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/umoha/IdeaProjects/SeleniumSampleFramework/src/test/java/testsForReportGeneration/SampleTests.java">
+        <classes>
+            <class name="testsForReportGeneration.SampleTests">
+            </class>
+        </classes>
     </test>
 </suite>
